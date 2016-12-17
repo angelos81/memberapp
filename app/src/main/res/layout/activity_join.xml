@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:text="CREATE ACCOUNT"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:text="ID : "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="INPUT ID"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:text="PASS : "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="INPUT PASSWORD"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:text="NAME : "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="INPUT NAME"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:text="TEL : "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="INPUT PHONE_NUMBER"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:text="ADDR : "
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/etAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="INPUT ADDRESS"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button
+            android:id="@+id/btSubmit"
+            android:text="SUBMIT"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btCancel"
+            android:text="CANCEL"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
