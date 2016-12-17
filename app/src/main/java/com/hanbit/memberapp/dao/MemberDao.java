@@ -1,5 +1,8 @@
 package com.hanbit.memberapp.dao;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.hanbit.memberapp.domain.MemberBean;
 
 import java.util.ArrayList;
@@ -10,6 +13,9 @@ import java.util.List;
  */
 
 public class MemberDao {
+    public MemberDao(Context applicationContext) {
+    }
+
     public MemberBean detail(String id){
         MemberBean member = new MemberBean();
         return member;
@@ -28,7 +34,9 @@ public class MemberDao {
     };
 
     public boolean login(MemberBean param){         //password가 존재하므로 은닉화
-        boolean flag = false;
+        Log.d("[dao.login] id", param.getId());
+        boolean flag = true;
+        Log.d("[login] result:", String.valueOf(flag));
         return flag;
     };
 

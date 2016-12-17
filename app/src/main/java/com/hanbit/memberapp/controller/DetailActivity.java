@@ -8,15 +8,26 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.hanbit.memberapp.R;
+import com.hanbit.memberapp.domain.MemberBean;
+import com.hanbit.memberapp.service.MemberService;
+import com.hanbit.memberapp.service.MemberServiceImpl;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener{
     TextView tvID, tvPass, tvName, tvTel, tvAddr;
     Button btCall, btMap, btMessage, btUpdate, btDelete, btList;
 
+    MemberBean member;
+
+    //Service
+    MemberService service;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        service = new MemberServiceImpl(this.getApplicationContext());
+        member = service.detail("hong");
 
         //TextView
         tvID = (TextView) findViewById(R.id.tvID);
@@ -24,6 +35,13 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         tvName = (TextView) findViewById(R.id.tvName);
         tvTel = (TextView) findViewById(R.id.tvTel);
         tvAddr = (TextView) findViewById(R.id.tvAddr);
+
+        //상세정보 임시로 설정
+        tvID.setText(member.getId());
+        tvPass.setText(member.getPass());
+        tvName.setText(member.getName());
+        tvTel.setText(member.getPhone());
+        tvAddr.setText(member.getAddr());
 
         //Button
         btCall = (Button) findViewById(R.id.btCall);
@@ -45,6 +63,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
+
         switch (view.getId()){
             case R.id.btCall:
 
@@ -59,7 +78,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 this.startActivity(new Intent(DetailActivity.this, UpdateActivity.class));
                 break;
             case R.id.btDelete:
-
+                service.delete(tvID.getText().toString());
+                this.startActivity(new Intent(DetailActivity.this, ListActivity.class));
                 break;
             case R.id.btList:
                 this.startActivity(new Intent(DetailActivity.this, ListActivity.class));

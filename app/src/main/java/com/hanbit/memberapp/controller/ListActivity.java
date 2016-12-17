@@ -7,9 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hanbit.memberapp.R;
+import com.hanbit.memberapp.domain.MemberBean;
+import com.hanbit.memberapp.service.MemberService;
+import com.hanbit.memberapp.service.MemberServiceImpl;
+
+import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements View.OnClickListener{
     Button btDetail, btFind;
+
+    //Service
+    MemberService service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,10 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         btDetail.setOnClickListener(this);
         btFind.setOnClickListener(this);
 
+        //Service
+        service = new MemberServiceImpl(this.getApplicationContext());
+
+        List<MemberBean> list = service.list();
     }
 
     @Override

@@ -50,7 +50,7 @@
         android:layout_marginTop="20dp"
         xmlns:android="http://schemas.android.com/apk/res/android">
         <Button
-            android:id="@+id/btSubmit"
+            android:id="@+id/btLogin"
             android:text="Login"
             android:textAlignment="center"
             android:textSize="25dp"
